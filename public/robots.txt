@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://robertinho-devfront.github.io/grand-oral-foot/sitemap.xml

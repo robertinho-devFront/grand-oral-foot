@@ -142,6 +142,11 @@ kbd { font-family: var(--label); border: 1px solid var(--edge); padding: 0 6px; 
 .diploma .d-name { font-size: 22px; font-weight: 600; border-bottom: 1px solid #1A1F1B; justify-self: center; padding: 0 24px 4px; min-width: 60%; }
 .diploma .d-meta { font-family: var(--label); text-transform: uppercase; letter-spacing: 0.1em; font-size: 14px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .diploma .seal { position: absolute; right: 14px; bottom: 12px; width: 62px; height: 62px; border-radius: 50%; background: var(--pitch); color: var(--card); display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 22px; transform: rotate(-12deg); }
+.diploma .d-mention { justify-self: center; background: var(--card); color: var(--ink); padding: 10px 18px; transform: rotate(-1.5deg); display: grid; gap: 2px; max-width: 90%; margin-top: 6px; }
+.diploma .d-mention strong { font-family: var(--label); text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; }
+.diploma .d-mention span { font-size: 15px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.sent { display: grid; gap: 10px; }
 .diploma.locked > :not(.lock) { filter: blur(6px); user-select: none; }
 .diploma .lock { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2; }
 .diploma .lock span { background: #1A1F1B; color: var(--chalk); font-family: var(--label); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; padding: 10px 16px; font-size: 15px; }
@@ -177,3 +182,33 @@ kbd { font-family: var(--label); border: 1px solid var(--edge); padding: 0 6px; 
   .two, .steps { grid-template-columns: 1fr; }
   .grade-cards { grid-template-columns: 1fr 1fr; }
 }
+
+/* Modes de difficulté */
+.modes { display: grid; gap: 8px; }
+.modes .eyebrow { margin-bottom: 2px; }
+.mode {
+  display: grid; grid-template-columns: 1fr auto; grid-template-areas: "name pips" "blurb pips"; align-items: center; gap: 2px 16px;
+  text-align: left; width: 100%; background: var(--panel); border: 2px solid var(--edge); padding: 12px 16px; cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.mode:hover { border-color: var(--chalk); }
+.mode.on { border-color: var(--card); background: var(--panel-hover); }
+.m-name { grid-area: name; font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 18px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.m-reco { font-size: 12px; background: var(--card); color: var(--ink); padding: 2px 8px; letter-spacing: 0.1em; }
+.m-blurb { grid-area: blurb; color: var(--muted); font-size: 15px; }
+.mode .pips { grid-area: pips; }
+.pips { display: inline-flex; gap: 4px; align-items: flex-end; }
+.pip { width: 8px; height: 18px; background: rgba(255,255,255,0.14); display: inline-block; }
+.pip.d0 { background: var(--good); height: 10px; }
+.pip.d1 { background: #9FD86B; height: 14px; }
+.pip.d2 { background: var(--card); height: 18px; }
+.pip.d3 { background: var(--bad); height: 22px; }
+.record { font-family: var(--label); text-transform: uppercase; letter-spacing: 0.06em; font-size: 15px; color: var(--card); font-variant-numeric: tabular-nums; }
+.record-flag { font-family: var(--label); text-transform: uppercase; letter-spacing: 0.08em; font-size: 15px; font-weight: 700; color: var(--card); }
+
+/* Méta de la question */
+.q-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.chip { font-family: var(--label); text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; font-weight: 700; background: var(--card); color: var(--ink); padding: 3px 10px; }
+.chip.ghost { background: transparent; color: var(--muted); border: 1px solid var(--edge); }
+.q-meta .pips { margin-left: auto; }
+.q-meta .pip { width: 6px; }

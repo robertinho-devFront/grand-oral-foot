@@ -8,11 +8,11 @@ export const APP_NAME = "Le Grand Oral du Foot";
 // Vide = l'URL de la page courante.
 export const SITE_URL = "https://robertinho-devfront.github.io/grand-oral-foot/";
 
-// Inscription newsletter. GitHub Pages n'a pas de serveur : il faut un service de formulaire.
-// Formspree : "https://formspree.io/f/xxxxxxx"
-// Brevo : l'URL d'action de ton formulaire Brevo (champs EMAIL, PRENOM, CLUB, SCORE, GRADE)
-// Vide = inscriptions désactivées (le diplôme s'affiche quand même).
-export const NEWSLETTER_ENDPOINT = "";
+// Envoi du diplôme par e-mail. GitHub Pages n'a pas de serveur : on passe par un script
+// Google Apps Script gratuit (voir apps-script/Code.gs et le README).
+// Colle ici l'URL du déploiement, qui ressemble à "https://script.google.com/macros/s/XXXX/exec".
+// Vide = pas d'envoi (le diplôme reste téléchargeable sur la page).
+export const DIPLOMA_ENDPOINT = "";
 
 // Questions tirées par niveau (sur 15 disponibles).
 export const QUESTIONS_PER_LEVEL = 10;
